@@ -1,4 +1,4 @@
-# wordworkfast
+# wardworkfast
 
 เว็บบอร์ดราวน์วอร์ดที่ทั้งทีมแก้ไขร่วมกัน (standalone web, ไม่ต้องสมัครสมาชิก)
 
@@ -14,5 +14,5 @@
 
 ## โครงสร้าง
 - `index.html` ทั้งแอปอยู่ในไฟล์เดียว เรียก Supabase ผ่าน RPC (`ww_*`)
-- ข้อมูลอยู่ใน Supabase project `wordworkfast` (schema `app` ซึ่ง API เข้าถึงตรงๆ ไม่ได้) ทุก RPC ต้องใช้รหัสบอร์ด
+- ข้อมูลอยู่ใน Supabase project `wordworkfast` (ชื่อเดิมของ project) (schema `app` ซึ่ง API เข้าถึงตรงๆ ไม่ได้) ทุก RPC ต้องใช้รหัสบอร์ด
 - โฮสต์บน GitHub Pages แบบ static (Settings → Pages → Deploy from a branch → `main` / root)

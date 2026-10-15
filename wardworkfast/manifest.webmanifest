@@ -1,6 +1,6 @@
 {
-  "name": "wordworkfast",
-  "short_name": "wordworkfast",
+  "name": "wardworkfast",
+  "short_name": "wardworkfast",
   "description": "Ward round board for the whole team",
   "start_url": "./",
   "display": "standalone",

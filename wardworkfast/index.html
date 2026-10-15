@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>wordworkfast</title>
+<title>wardworkfast</title>
 <meta name="description" content="บอร์ดราวน์วอร์ดที่ทีมแก้ไขร่วมกัน: เตียง Dx vital signs lab active problems ward work D/C และ consult">
 <meta name="robots" content="noindex">
 <meta name="theme-color" content="#0b6e74">
@@ -11,7 +11,7 @@
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icon.svg">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="wordworkfast">
+<meta name="apple-mobile-web-app-title" content="wardworkfast">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@600;700&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans+Thai:wght@400;500;600&display=swap">
@@ -175,7 +175,7 @@ dialog::backdrop { background: rgb(5 15 18 / .5); }
 }
 @media (prefers-reduced-motion: no-preference) { .pt { transition: border-color .15s; } .pt:hover { border-color: var(--accent); } }
 
-/* wordworkfast additions */
+/* wardworkfast additions */
 html, body { min-height: 100%; }
 body { margin: 0; padding-top: env(safe-area-inset-top, 0px); }
 .wordmark { font-family: var(--f-display); font-weight: 700; letter-spacing: -.01em; }
@@ -217,7 +217,7 @@ body { margin: 0; padding-top: env(safe-area-inset-top, 0px); }
   <main class="wrap"><div class="landing">
     <div>
       <span class="eyebrow">Ward round board</span>
-      <h1 class="wordmark">wordwork<i>fast</i></h1>
+      <h1 class="wordmark">wardwork<i>fast</i></h1>
     </div>
     <p class="lede">บอร์ดราวน์วอร์ดที่ทั้งทีมเปิดดูและแก้ไขได้พร้อมกัน มีตารางตามเลขเตียง Dx, vital signs, lab สำคัญ, active problems, ward work, สถานะ D/C และ consult panel</p>
     <section class="card">
@@ -249,7 +249,7 @@ body { margin: 0; padding-top: env(safe-area-inset-top, 0px); }
 <header class="top">
   <div class="wrap">
     <div class="brand">
-      <span class="eyebrow"><a class="home wordmark" href="./">wordwork<i>fast</i></a> · <span id="today"></span></span>
+      <span class="eyebrow"><a class="home wordmark" href="./">wardwork<i>fast</i></a> · <span id="today"></span></span>
       <input id="ward-name" value="" placeholder="ตั้งชื่อวอร์ด" aria-label="ชื่อหอผู้ป่วย" maxlength="80">
     </div>
     <label class="who" for="me-name">ผู้แก้ไข <input id="me-name" placeholder="ใส่ชื่อคุณ" maxlength="40"></label>
@@ -386,7 +386,7 @@ function route() {
 }
 function showLanding() {
   $("#app").hidden = true; $("#landing").hidden = false;
-  document.title = "wordworkfast";
+  document.title = "wardworkfast";
   const list = ls.get("wwf-boards", []);
   $("#recent").innerHTML = list.length
     ? `<li class="hint">บอร์ดที่เคยเปิดในเครื่องนี้</li>` + list.map((b) => `<li><a href="#${esc(b.k)}">${esc(b.name || "บอร์ดไม่มีชื่อ")}</a></li>`).join("")
@@ -419,7 +419,7 @@ async function refresh(first) {
     if (!b) { setSync("", "ไม่พบบอร์ดนี้"); $("#view").innerHTML = `<div class="empty"><h2>ไม่พบบอร์ดนี้</h2><p>ลิงก์อาจพิมพ์ผิดหรือไม่ครบ ขอลิงก์ใหม่จากทีม หรือ <a href="./">สร้างบอร์ดใหม่</a></p></div>`; clearInterval(pollT); return; }
     patients = new Map(b.patients.map((r) => [r.id, { ...r.data, id: r.id, updatedAt: r.updated_at, updatedBy: r.updated_by }]));
     if (document.activeElement !== $("#ward-name")) { wardName = b.name || ""; $("#ward-name").value = wardName; }
-    document.title = (wardName ? wardName + " · " : "") + "wordworkfast";
+    document.title = (wardName ? wardName + " · " : "") + "wardworkfast";
     remember(boardKey, wardName);
     lastOk = Date.now();
     setSync("on", "ออนไลน์ · อัปเดตอัตโนมัติ");
